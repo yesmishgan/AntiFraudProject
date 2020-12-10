@@ -15,8 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('fraud_monitor/', include('fraud_monitor.urls'))
+    path('fraud_monitor/', include('fraud_monitor.urls')),
 ]
+
+urlpatterns += [
+    path('', RedirectView.as_view(url='/fraud_monitor/', permanent=True)),
+]
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
