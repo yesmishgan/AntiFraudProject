@@ -1,3 +1,5 @@
+# Copyright 2020 Mikhail Dolbnin dolbnin.n@gmail.com
+
 """AntiFraudProjsect URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:

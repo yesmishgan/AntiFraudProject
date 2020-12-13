@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+
+# Copyright 2020 Mikhail Dolbnin dolbnin.n@gmail.com
 """Django's command-line utility for administrative tasks."""
 import os
 import sys

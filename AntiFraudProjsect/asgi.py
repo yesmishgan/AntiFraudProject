@@ -1,3 +1,5 @@
+# Copyright 2020 Mikhail Dolbnin dolbnin.n@gmail.com
+
 """
 ASGI config for AntiFraudProjsect project.
 

@@ -1,3 +1,5 @@
+# Copyright 2020 Mikhail Dolbnin dolbnin.n@gmail.com
+
 from django.db import models
 
 class Transaction(models.Model):

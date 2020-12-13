@@ -1,3 +1,5 @@
+# Copyright 2020 Mikhail Dolbnin dolbnin.n@gmail.com
+
 import json
 from django.shortcuts import render
 from django.template import loader, Context
