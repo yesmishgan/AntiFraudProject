@@ -20,8 +20,8 @@ from django.views.generic import RedirectView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('fraud_monitor/', include('fraud_monitor.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('', RedirectView.as_view(url='accounts/', permanent=True)),
+    #path('accounts/', include('django.contrib.auth.urls')),
+    #path('', RedirectView.as_view(url='accounts/', permanent=True)),
 ]
 
 from django.conf import settings

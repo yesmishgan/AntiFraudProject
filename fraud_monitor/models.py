@@ -1,16 +1,12 @@
 from django.db import models
 
-class FraudMonitor(models.Model):
-    my_field_name = models.CharField(max_length=20, help_text="Enter field documentation")
-
-    class Meta:
-        ordering = ["-my_field_name"]
+class Transaction(models.Model):
+    TransactionID = models.CharField(max_length = 25)
+    TransactionAmt = models.FloatField()
+    Card1 = models.FloatField()
+    Card2 = models.FloatField()
+    isFraud = models.BooleanField(default=False)
+    Card6 = models.CharField(max_length = 10)
 
     def __str__(self):
-        return self.my_field_name
-
-    def get_absolute_url(self):
-        """
-        Returns the url to access a particular instance of the model.
-        """
-        return reverse('model-detail-view', args=[str(self.id)])
+        return self.TransactionID

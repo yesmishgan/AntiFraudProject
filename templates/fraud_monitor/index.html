@@ -1,5 +1,110 @@
-{% extends "fraud_monitor/base_generic.html" %}
+{% extends "base_generic.html" %}
 
 {% block title %}
-<title>test</title>
+<title>FPS</title>
+{% endblock %}
+
+{% block head %}
+<style>
+    #myInput {
+    width: 100%;
+    font-size: 20px;
+    padding: 12px 20px 12px 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    }
+    .row.content {height: auto}
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+<div class="navbar navbar-inverse sticky-top">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Fraud Prediction System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{% url 'fraud_monitor:index' %}">Home</a></li>
+      <li class=""><a href="#">Stats</a></li>
+    </ul>
+</div>
+<div class="container-fluid text-center">
+<div class="row content">
+  <div class="col-sm-2 sidenav">
+  </div>
+  <div class="col-sm-8 text-left">
+    <h2>Transaction logs</h2>
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for id..">
+    <table class="table" id="myTable">
+    <thead>
+      <tr>
+        <th>TransactionID</th>
+        <th>TransactionAmt</th>
+        <th>Card1</th>
+        <th>Card2</th>
+        <th>Card6</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if last_transaction %}
+
+        {% for a in last_transaction %}
+
+          {% if a.isFraud %}
+            <tr class="danger">
+          {% else %}
+            <tr class="success">
+          {% endif %}
+              <td>{{a.TransactionID}}</td>
+              <td>{{a.TransactionAmt}}</td>
+              <td>{{a.Card1}}</td>
+              <td>{{a.Card2}}</td>
+              <td>{{a.Card6}}</td>
+            </tr>
+        {% endfor %}
+
+      {% endif %}
+    </tbody>
+  </table>
+
+  <script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+</script>
+
+  </div>
+  <div class="col-sm-2 sidenav">
+    <a href="{% url 'fraud_monitor:index' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Refresh</a>
+  </div>
+</div>
+</div>
 {% endblock %}
