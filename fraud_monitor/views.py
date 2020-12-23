@@ -8,9 +8,7 @@ from .models import Transaction
 
 
 def index(request):
-    print(request.body)
     last_transaction = Transaction.objects.all()[::-1]
-    print(last_transaction)
     return render(
         request,
         './fraud_monitor/index.html',
@@ -34,3 +32,14 @@ def upload(request):
         return HttpResponse(str(element) +" is saved")
     else:
         return HttpResponse("no")
+
+
+def stats(request):
+    last_transaction = Transaction.objects.all()
+    legal = len(last_transaction.filter(isFraud = False))
+    fraud = len(last_transaction.filter(isFraud = True))
+    return render(
+    request,
+    './fraud_monitor/stats.html',
+    {'legal' : legal, 'fraud' : fraud}
+    )

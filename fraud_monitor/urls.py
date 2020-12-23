@@ -10,4 +10,5 @@ app_name = 'fraud_monitor'
 urlpatterns = [
     url('upload/', views.upload, name='upload'),
     url(r'^$', views.index, name='index'),
+    url('stats/', views.stats, name='stats'),
 ]

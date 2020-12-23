@@ -1,0 +1,103 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+<title>FPS</title>
+{% endblock %}
+
+{% block head %}
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<style>
+    #myInput {
+    width: 100%;
+    font-size: 20px;
+    padding: 12px 20px 12px 20px;
+    border: 1px solid #ddd;
+    margin-bottom: 12px;
+    }
+    .row.content {height: auto}
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;}
+    }
+  </style>
+{% endblock %}
+
+{% block content %}
+<div class="navbar navbar-inverse sticky-top">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Fraud Prediction System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class=""><a href="{% url 'fraud_monitor:index' %}">Home</a></li>
+      <li class="active"><a href="{% url 'fraud_monitor:stats' %}">Stats</a></li>
+      <li class=""><a href="{% url 'admin:index' %}">Admins</a></li>
+    </ul>
+</div>
+<div class="container-fluid text-center">
+<div class="row content">
+  <div class="col-sm-2 sidenav">
+  </div>
+  <div class="col-sm-8 text-left">
+    <h2>Transaction stats</h2>
+    <div id="container1"></div>
+    <script>
+        Highcharts.chart('container1', {
+          chart: {
+              plotBackgroundColor: null,
+              plotBorderWidth: null,
+              plotShadow: false,
+              type: 'pie'
+          },
+          title: {
+              text: 'Ratio between fraud and legal operations'
+          },
+          tooltip: {
+              pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+          },
+          accessibility: {
+              point: {
+                  valueSuffix: '%'
+              }
+          },
+          plotOptions: {
+              pie: {
+                  allowPointSelect: true,
+                  cursor: 'pointer',
+                  dataLabels: {
+                      enabled: false
+                  },
+                  showInLegend: true
+              }
+        },
+          series: [{
+              name: 'Status',
+              colorByPoint: true,
+              data: [{
+                  name: 'Legal',
+                  y: {{legal}},
+                  sliced: true,
+                  selected: true
+              }, {
+                  name: 'Fraud',
+                  y: {{fraud}}
+              }]
+          }]
+      });
+    </script>
+  </div>
+  <div class="col-sm-2 sidenav">
+    <a href="{% url 'fraud_monitor:index' %}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Refresh</a>
+  </div>
+</div>
+</div>
+{% endblock %}
