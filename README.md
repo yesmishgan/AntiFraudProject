@@ -32,7 +32,7 @@ This project consists of components as described below.
 
 # Installing dependencies
 
-This project needs [python v3.6+](https://www.python.org) to be work. Other objects will be install when you make first start.
+This project needs [python v3.6+](https://www.python.org) to work. Other objects will be install when you first start.
 
 ## Debian
 
@@ -67,7 +67,7 @@ $ sudo chmod +x app.sh
 $ ./app.sh
 ```
 
-After the install you can use application in one step. Just click on the icon of app.
+After the install you can use application in one step. Just click on the icon of the app.
 
 # License
 
