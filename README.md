@@ -1,1 +1,74 @@
-# AntiFraudProject
+
+
+# FraudPredictSystem(FPS)
+
+[![Build Status](https://travis-ci.com/yesmishgan/AntiFraudProject.svg?branch=main)](https://travis-ci.com/yesmishgan/AntiFraudProject)
+
+# Contents
+
+- [Overview](#overview)
+- [Installing dependencies](#installing-dependencies)
+    * [Debian](#debian)
+    * [macOS](#mac-os)
+- [Building and Usage](#building)
+- [License](#license)
+
+# Overview
+
+This project consists of components as described below.
+
+- v
+
+- v
+
+# Integration
+
+
+
+# Installing dependencies
+
+This project needs [python v3.6+](https://www.python.org) to be work. Other objects will be install when you make first start.
+
+## Debian
+
+```bash
+$ sudo apt-get update
+$ sudo apt-get install python3
+```
+
+## macOS
+
+Use [brew](https://brew.sh/):
+```bash
+$ brew install python
+```
+
+# Building and Usage
+
+First make sure that you have followed all steps presented in [installing dependencies](#installing-dependencies) topic.
+
+If you want to add application in your library of apps, please follow the commands
+
+```bash
+$ git clone https://github.com/yesmishgan/AntiFraudProject.git
+$ cd AntiFraudProject/
+
+# if you have macOS
+$ mv FraudPredict.app /System/Application
+# Run application in your Doc after that command
+
+# if you have other System (without Windows)
+$ sudo chmod +x app.sh
+$ ./app.sh
+```
+
+After the install you can use application in one step. Just click on the icon of app.
+
+# License
+
+This software is distibuted under MIT License. For more details see [LICENSE.txt](LICENSE.txt).
+
+# Further development
+
+- [x] Wavelet module
+- [x] JPEG module
