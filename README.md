@@ -8,7 +8,7 @@
 - [Overview](#overview)
 - [Installing dependencies](#installing-dependencies)
     * [Debian](#debian)
-    * [macOS](#mac-os)
+    * [macOS](#macos)
 - [Usage](#usage)
 - [License](#license)
 
@@ -69,5 +69,5 @@ This software is distibuted under MIT License. For more details see [LICENSE.txt
 
 # Further development
 
-- [] Wavelet module
-- [] JPEG module
+- [ ] Wavelet module
+- [ ] JPEG module
