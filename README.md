@@ -16,9 +16,17 @@
 
 This project consists of components as described below.
 
-- v
+- Maintaining the transaction database
 
-- v
+- Display information from the database
+
+- Dynamic search transactions by ID
+
+- Display statistics on data
+
+- Generation of input data and processing with the trained model
+
+- Handling POST requests containing a json object and adding a record to the database
 
 # Integration
 
