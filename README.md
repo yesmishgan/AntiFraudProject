@@ -3,6 +3,8 @@
 
 # FraudPredictSystem(FPS)
 
+<img src="https://media.giphy.com/media/lJNoBCvQYp7nq/giphy.gif" width="300" >
+
 # Contents
 
 - [Overview](#overview)
@@ -27,10 +29,6 @@ This project consists of components as described below.
 - Generation of input data and processing with the trained model
 
 - Handling POST requests containing a json object and adding a record to the database
-
-# Integration
-
-
 
 # Installing dependencies
 
