@@ -12,3 +12,6 @@ class Transaction(models.Model):
 
     def __str__(self):
         return self.TransactionID
+
+    def getStatus(self):
+        return self.isFraud
