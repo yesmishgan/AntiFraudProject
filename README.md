@@ -72,8 +72,3 @@ After the install you can use application in one step. Just click on the icon of
 # License
 
 This software is distibuted under MIT License. For more details see [LICENSE.txt](LICENSE.txt).
-
-# Further development
-
-- [ ] Wavelet module
-- [ ] JPEG module
