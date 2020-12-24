@@ -1,8 +1,7 @@
 
+[![Build Status](https://travis-ci.com/yesmishgan/AntiFraudProject.svg?branch=main)](https://travis-ci.com/yesmishgan/AntiFraudProject)
 
 # FraudPredictSystem(FPS)
-
-[![Build Status](https://travis-ci.com/yesmishgan/AntiFraudProject.svg?branch=main)](https://travis-ci.com/yesmishgan/AntiFraudProject)
 
 # Contents
 
@@ -10,7 +9,7 @@
 - [Installing dependencies](#installing-dependencies)
     * [Debian](#debian)
     * [macOS](#mac-os)
-- [Building and Usage](#building)
+- [Usage](#usage)
 - [License](#license)
 
 # Overview
@@ -43,7 +42,7 @@ Use [brew](https://brew.sh/):
 $ brew install python
 ```
 
-# Building and Usage
+# Usage
 
 First make sure that you have followed all steps presented in [installing dependencies](#installing-dependencies) topic.
 
@@ -70,5 +69,5 @@ This software is distibuted under MIT License. For more details see [LICENSE.txt
 
 # Further development
 
-- [x] Wavelet module
-- [x] JPEG module
+- [] Wavelet module
+- [] JPEG module
