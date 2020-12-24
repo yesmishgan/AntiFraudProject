@@ -28,10 +28,6 @@ This project consists of components as described below.
 
 - Handling POST requests containing a json object and adding a record to the database
 
-# Integration
-
-
-
 # Installing dependencies
 
 This project needs [python v3.6+](https://www.python.org) to be work. Other objects will be install when you make first start.
